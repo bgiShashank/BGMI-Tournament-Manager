@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGMI Tournament Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="nav-logo-icon">
+                    <div class="mini-logo">
+                        <div class="mini-circle">
+                            <img src="circle logo bfmi.png" alt="BGMI Logo" class="mini-logo-img">
+                        </div>
+                    </div>
+                </div>
+                <span>INDIA HUNTERS</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tournaments" class="nav-link">Tournaments</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#register" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#admin" class="nav-link">Admin</a>
+                </li>
+            </ul>
+            <button id="authBtn" class="btn btn-secondary" style="margin-left: 10px; padding: 8px 14px; font-size: 0.9rem;">Login</button>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-image">
+            <i class="fas fa-trophy"></i>
+        </div>
+        <div class="hero-content">
+            <h1>India Hunters</h1>
+            <p>Join the ultimate Battlegrounds Mobile India tournament experience. Register your team and compete for
+                glory!</p>
+            <div class="hero-buttons">
+                <a href="#register" class="btn btn-primary">Register Now</a>
+                <a href="#tournaments" class="btn btn-secondary">View Tournaments</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tournaments Section -->
+    <section id="tournaments" class="tournaments">
+        <div class="container">
+            <h2>Active Tournaments</h2>
+            <div class="tournament-grid" id="tournamentGrid">
+                <!-- Tournaments will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="registration">
+        <div class="container">
+            <h2>Registration</h2>
+            <div class="registration-tabs">
+                <button class="tab-btn active" data-tab="team">Team Registration</button>
+            </div>
+
+            <!-- Team Registration Form -->
+            <div id="team-tab" class="tab-content active">
+                <form id="teamRegistrationForm" class="registration-form">
+                    <div class="form-group">
+                        <label for="teamName">Team Name *</label>
+                        <input type="text" id="teamName" name="teamName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamCaptain">Team Captain Name *</label>
+                        <input type="text" id="teamCaptain" name="teamCaptain" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamCaptainId">Captain BGMI ID *</label>
+                        <input type="text" id="teamCaptainId" name="teamCaptainId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamCaptainRole">Captain Role *</label>
+                        <input type="text" id="teamCaptainRole" name="teamCaptainRole" placeholder="e.g., IGL, Fragger, Support" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamEmail">Team Contact Email *</label>
+                        <input type="email" id="teamEmail" name="teamEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamPhone">Team Contact Phone *</label>
+                        <input type="tel" id="teamPhone" name="teamPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamTournament">Select Tournament *</label>
+                        <select id="teamTournament" name="teamTournament" required>
+                            <option value="">Select Tournament</option>
+                        </select>
+                    </div>
+                    <div class="team-members">
+                        <h3>Team Members (4-6 players)</h3>
+                        <div class="mandatory-players">
+                            <h4>Mandatory Players (4 required)</h4>
+                            <div class="member-inputs">
+                                <div class="member-input">
+                                    <input type="text" placeholder="Player 2 Name *" name="member2Name" required>
+                                    <input type="text" placeholder="Player 2 BGMI ID *" name="member2Id" required>
+                                    <input type="text" placeholder="Player 2 Role *" name="member2Role" required>
+                                </div>
+                                <div class="member-input">
+                                    <input type="text" placeholder="Player 3 Name *" name="member3Name" required>
+                                    <input type="text" placeholder="Player 3 BGMI ID *" name="member3Id" required>
+                                    <input type="text" placeholder="Player 3 Role *" name="member3Role" required>
+                                </div>
+                                <div class="member-input">
+                                    <input type="text" placeholder="Player 4 Name *" name="member4Name" required>
+                                    <input type="text" placeholder="Player 4 BGMI ID *" name="member4Id" required>
+                                    <input type="text" placeholder="Player 4 Role *" name="member4Role" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="substitute-players">
+                            <h4>Substitute Players (Optional)</h4>
+                            <div class="member-inputs">
+                                <div class="member-input">
+                                    <input type="text" placeholder="Substitute Player 1 Name" name="substitute1Name">
+                                    <input type="text" placeholder="Substitute Player 1 BGMI ID" name="substitute1Id">
+                                    <input type="text" placeholder="Substitute Player 1 Role" name="substitute1Role">
+                                </div>
+                                <div class="member-input">
+                                    <input type="text" placeholder="Substitute Player 2 Name" name="substitute2Name">
+                                    <input type="text" placeholder="Substitute Player 2 BGMI ID" name="substitute2Id">
+                                    <input type="text" placeholder="Substitute Player 2 Role" name="substitute2Role">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register Team</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Section -->
+    <section id="admin" class="admin">
+        <div class="container">
+            <h2>Admin Dashboard</h2>
+            <div class="admin-tabs">
+                <button class="admin-tab-btn active" data-tab="registrations">Registrations</button>
+                <button class="admin-tab-btn" data-tab="tournaments">Manage Tournaments</button>
+                <button class="admin-tab-btn" data-tab="create-tournament">Create Tournament</button>
+            </div>
+
+            <!-- Registrations Tab -->
+            <div id="registrations-tab" class="admin-tab-content active">
+                <div class="admin-controls">
+                    <input type="text" id="searchRegistrations" placeholder="Search registrations...">
+                    <select id="filterType">
+                        <option value="all">All Types</option>
+                        <option value="team">Team</option>
+                    </select>
+                    <button id="downloadCsvBtn" class="btn btn-primary" style="padding: 12px 16px;">Download CSV</button>
+                </div>
+                <div class="registrations-table" id="registrationsTable">
+                    <!-- Registrations will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Manage Tournaments Tab -->
+            <div id="tournaments-tab" class="admin-tab-content">
+                <div class="tournaments-table" id="adminTournamentsTable">
+                    <!-- Tournaments will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Create Tournament Tab -->
+            <div id="create-tournament-tab" class="admin-tab-content">
+                <form id="createTournamentForm" class="admin-form">
+                    <div class="form-group">
+                        <label for="tournamentName">Tournament Name *</label>
+                        <input type="text" id="tournamentName" name="tournamentName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tournamentDescription">Description *</label>
+                        <textarea id="tournamentDescription" name="tournamentDescription" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tournamentDate">Tournament Date *</label>
+                        <input type="datetime-local" id="tournamentDate" name="tournamentDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="maxPlayers">Max Players/Teams *</label>
+                        <input type="number" id="maxPlayers" name="maxPlayers" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="entryFee">Entry Fee (₹)</label>
+                        <input type="number" id="entryFee" name="entryFee" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="prizePool">Prize Pool (₹)</label>
+                        <input type="number" id="prizePool" name="prizePool" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="tournamentType">Tournament Type *</label>
+                        <select id="tournamentType" name="tournamentType" required>
+                            <option value="solo">Solo</option>
+                            <option value="team">Team (4v4)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Tournament</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BGMI Tournament</h3>
+                    <p>Your ultimate destination for competitive BGMI tournaments.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#tournaments">Tournaments</a></li>
+                        <li><a href="#register">Register</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: bgmitournament.06@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BGMI Tournament. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <i id="modalIcon" class="fas fa-check-circle success-icon"></i>
+                <h3 id="successTitle">Success</h3>
+                <p id="successMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content" style="max-width: 520px;">
+            <span class="close" id="paymentClose">&times;</span>
+            <div class="modal-body">
+                <h3>Complete Payment</h3>
+                <p id="paymentDetails" class="mt-20">Please scan the QR and pay the entry fee to complete your registration.</p>
+                <div id="qrWrapper" class="text-center mt-20">
+                    <img id="paymentQr" src="" alt="Payment QR" style="max-width:260px; width:100%; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.1); display:none;">
+                    <p id="upiText" class="mt-20" style="display:none;"></p>
+                </div>
+                <div class="admin-form mt-20">
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <select id="paymentMethod">
+                            <option value="upi">UPI</option>
+                            <option value="bank">Bank Transfer</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentRef">Transaction/Reference ID</label>
+                        <input type="text" id="paymentRef" placeholder="Enter payment reference ID">
+                    </div>
+                    <button id="confirmPaymentBtn" class="btn btn-primary" style="width: 100%;">I have paid, confirm</button>
+                </div>
+                <p class="mt-20">Note: Your spot is confirmed only after payment.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content" style="max-width: 420px;">
+            <span class="close" id="authClose">&times;</span>
+            <div class="modal-body">
+                <h3 style="margin-bottom: 20px;">Admin Login</h3>
+                <form id="authForm" class="admin-form">
+                    <div class="form-group">
+                        <label for="authUsername">Username</label>
+                        <input type="text" id="authUsername" name="authUsername" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="authPassword">Password</label>
+                        <input type="password" id="authPassword" name="authPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                    <p id="authError" class="text-danger" style="margin-top: 12px; display: none;">Invalid credentials. Try again.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
